@@ -64,24 +64,25 @@ LEFT JOIN `Profile_has_Message` AS phm ON p.profile_id = phm.profile_id
 LEFT JOIN `Profile_Tag` AS pt ON p.profile_id = pt.tagged_profile_id;
 
 SELECT *
-FROM Table1
-RIGHT JOIN Table2 ON Table1.id = Table2.id;
+FROM Profile
+LEFT JOIN User ON Profile.profile_id = User.profile_id;
 
 SELECT *
-FROM Table1
-RIGHT JOIN Table2 ON Table1.id = Table2.id;
+FROM Profile
+RIGHT JOIN User ON Profile.profile_id = User.profile_id;
 
 SELECT *
-FROM Table1
-INNER JOIN Table2 ON Table1.id = Table2.id;
+FROM Profile
+INNER JOIN User ON Profile.profile_id = User.profile_id;
 
 SELECT *
-FROM Table1
-LEFT JOIN Table2 ON Table1.id = Table2.id
+FROM Profile
+LEFT JOIN User ON Profile.profile_id = User.profile_id
 UNION
 SELECT *
-FROM Table1
-RIGHT JOIN Table2 ON Table1.id = Table2.id;
+FROM Profile
+RIGHT JOIN User ON Profile.profile_id = User.profile_id;
+
 
 SELECT gender, COUNT(*) AS profile_count
 FROM Profile
